@@ -84,37 +84,52 @@ const Details = ({ navigation, route }) => {
                 {
                     status == "Flight" && index == 0 &&
                     <View>
-                        <Text style={{ fontSize: 17, fontWeight: "500", color: COLOURS.blue }}>{"Grand Price  $" + aircraftDaata.grandPrice}</Text>
-                        <Text style={{ fontSize: 17, fontWeight: "500", color: COLOURS.blue }}>{"Departing  "}</Text>
-                        <Text style={{ fontSize: 17, fontWeight: "500" }}>{"Flight " + aircraftDaata.aircraftcode}</Text>
-                        <Text style={{ fontSize: 17, fontWeight: "500" }}>{"Carrier " + aircraftDaata.carrierCode}</Text>
-                        <Text style={{ fontSize: 17, fontWeight: "500" }}>{"Departing Date " + aircraftDaata.departDate}</Text>
-                        <Text style={{ fontSize: 17, fontWeight: "500" }}>{"Departing Time " + departTime.substring(11, 16)}</Text>
-                        <Text style={{ fontSize: 17, fontWeight: "500" }}>{"Duration " + aircraftDaata.flightDuration}</Text>
+                        
+                        <Text style={{ fontSize: 17, fontWeight: "600", color: COLOURS.blue, marginBottom: 10 }}>{"Departing  "}</Text>
+                        <Text>{"Flight " + aircraftDaata.aircraftcode}</Text>
+                        <Text>{"Carrier: " + aircraftDaata.carrierCode}</Text>
+                        <Text>{"Departing Date: " + aircraftDaata.departDate}</Text>
+                        <Text>{"Departing Time: " + departTime.substring(11, 16)}</Text>
+                        <Text>{"Duration: " + aircraftDaata.flightDuration}</Text>
                         {Beds == "1" &&
-                            <Text style={{ fontSize: 17, fontWeight: "500" }}>{"Seat Number " + Seatnumber1}</Text>
+                            <Text>{"Seat Number " + Seatnumber1}</Text>
                         }
                         {Beds == "2" &&
-                            <Text style={{ fontSize: 17, fontWeight: "500" }}>{"Seat Numbers   " + Seatnumber1 + ",  " + (parseInt(Seatnumber1) + 1)}</Text>
+                            <Text>{"Seat Numbers   " + Seatnumber1 + ",  " + (parseInt(Seatnumber1) + 1)}</Text>
                         }
                         {Beds == "3" &&
-                            <Text style={{ fontSize: 17, fontWeight: "500" }}>{"Seat Numbers   " + Seatnumber1 + ",  " + (parseInt(Seatnumber1) + 1) + ",  " + (parseInt(Seatnumber1) + 2)}</Text>
+                            <Text>{"Seat Numbers   " + Seatnumber1 + ",  " + (parseInt(Seatnumber1) + 1) + ",  " + (parseInt(Seatnumber1) + 2)}</Text>
                         }
-                        <Text style={{ fontSize: 17, fontWeight: "500", color: COLOURS.blue }}>{"Returning "}</Text>
-                        <Text style={{ fontSize: 17, fontWeight: "500" }}>{"Flight " + aircraftDaata.aircraftcode}</Text>
-                        <Text style={{ fontSize: 17, fontWeight: "500" }}>{"Carrier " + aircraftDaata.carrierCode}</Text>
-                        <Text style={{ fontSize: 17, fontWeight: "500" }}>{"Returning Date " + aircraftDaata.returDate}</Text>
-                        <Text style={{ fontSize: 17, fontWeight: "500" }}>{"Returning Time " + returnTime.substring(11, 16)}</Text>
-                        <Text style={{ fontSize: 17, fontWeight: "500" }}>{"Duration " + aircraftDaata.flightDuration}</Text>
+                        <View
+                            style={{
+                                borderBottomColor: COLOURS.grey,
+                                borderBottomWidth: 0.5,
+                                marginVertical: 20,
+                            }}
+                        />
+                        <Text style={{ fontSize: 17, fontWeight: "600", color: COLOURS.blue, marginBottom: 10 }}>{"Returning "}</Text>
+                        <Text>{"Flight " + aircraftDaata.aircraftcode}</Text>
+                        <Text>{"Carrier: " + aircraftDaata.carrierCode}</Text>
+                        <Text>{"Returning Date: " + aircraftDaata.returDate}</Text>
+                        <Text>{"Returning Time: " + returnTime.substring(11, 16)}</Text>
+                        <Text>{"Duration: " + aircraftDaata.flightDuration}</Text>
                         {Beds == "1" &&
-                            <Text style={{ fontSize: 17, fontWeight: "500" }}>{"Seat Number " + Seatnumber1}</Text>
+                            <Text>{"Seat Number " + Seatnumber1}</Text>
                         }
                         {Beds == "2" &&
-                            <Text style={{ fontSize: 17, fontWeight: "500" }}>{"Seat Numbers   " + Seatnumber1 + ",  " + (parseInt(Seatnumber1) + 1)}</Text>
+                            <Text>{"Seat Numbers   " + Seatnumber1 + ",  " + (parseInt(Seatnumber1) + 1)}</Text>
                         }
                         {Beds == "3" &&
-                            <Text style={{ fontSize: 17, fontWeight: "500" }}>{"Seat Numbers   " + Seatnumber1 + ",  " + (parseInt(Seatnumber1) + 1) + ",  " + (parseInt(Seatnumber1) + 2)}</Text>
+                            <Text>{"Seat Numbers   " + Seatnumber1 + ",  " + (parseInt(Seatnumber1) + 1) + ",  " + (parseInt(Seatnumber1) + 2)}</Text>
                         }
+                        <View
+                            style={{
+                                borderBottomColor: COLOURS.grey,
+                                borderBottomWidth: 0.5,
+                                marginVertical: 20,
+                            }}
+                        />
+                        <Text style={{ fontSize: 20, fontWeight: "900", color: COLOURS.orange, marginTop: 10 }}>{"Grand Price  $" + aircraftDaata.grandPrice}</Text>
                     </View>
                 }
 
@@ -127,22 +142,38 @@ const Details = ({ navigation, route }) => {
                                     setcountryName(item1.countryName)
                                     // console.log(countryName)
                                     return (
-                                        <Text style={{ color: COLOURS.blue, fontWeight: 'bold', fontSize: 18 }}>{item1.countryName}</Text>
+                                        <Text style={{ color: COLOURS.orange, fontWeight: 'bold', fontSize: 20, marginBottom: 20 }}>{item1.countryName}</Text>
                                     )
                                 }
                             })}
-                            <Text style={{ color: COLOURS.blue }}>{"Hotel:  " + hotelData?.name}</Text>
-                            <Text>{"City:  " + hotelAddress[0]?.city}</Text>
-                            <Text>{"CheckIn Date " + aircraftDaata.departDate}</Text>
-                            <Text>{"CheckOut Date " + aircraftDaata.returDate}</Text>
-                            <Text>{"Street:  " + hotelAddress[0]?.street}</Text>
-                            <Text>{"PostelCode:  " + hotelAddress[0]?.postalCode}</Text>
-                            <Text>{"Region:  " + hotelAddress[0]?.region}</Text>
-                            <Text>{"Subregion:  " + hotelAddress[0]?.subregion}</Text>
+                            <Text style={{ fontWeight: 'bold', fontSize: 17, color: COLOURS.blue, marginBottom: 10 }}>{"Hotel:  " + hotelData?.name}</Text>
+                            <Text>{"City: " + hotelAddress[0]?.city}</Text>
+                            <Text>{"Address: " + hotelAddress[0]?.street}</Text>
+                            <Text>{"PostalCode: " + hotelAddress[0]?.postalCode}</Text>
+                            <Text>{"Region: " + hotelAddress[0]?.region}</Text>
+                            <Text>{"Subregion: " + hotelAddress[0]?.subregion}</Text>
+
+                            <Text></Text>
+                            
+                            <Text>{"Check-In Date: " + aircraftDaata.departDate}</Text>
+                            <Text>{"Check-Out Date: " + aircraftDaata.returDate}</Text>
+
+                            <Text></Text>
+                            
                             <Text>{"No of Beds:  " + Beds}</Text>
-                            <Text>{"Room type  " + roomType}</Text>
-                            <Text>{"Price for 1 person:  " + "$170"}</Text>
-                            <Text>{"Your Grand Price:  $" + hotelGrandPrice}</Text>
+                            <Text>{"Room type: " + roomType}</Text>
+
+                            <Text></Text>
+                            <View
+                                style={{
+                                    borderBottomColor: COLOURS.grey,
+                                    borderBottomWidth: 0.5,
+                                    marginVertical: 20,
+                                }}
+                            />
+
+                            <Text>{"Price per person:  $" + "170"}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "900", color: COLOURS.orange, marginTop: 10 }}>{"Grand Price:  $" + hotelGrandPrice}</Text>
 
 
                         </View> :

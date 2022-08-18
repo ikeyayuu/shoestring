@@ -117,7 +117,7 @@ const Results = ({ route, navigation }) => {
                 }
             })
         } catch (error) {
-            alert("Sorry, we couldnt find any hotel for the selected country please book yourself")
+            alert("Sorry, we couldn't find any hotel for the selected country please book yourself")
             navigation.navigate('Details', { aircraftDaata: aircraftDaata, isLogged: isLogged, hotelData: null, Beds: AmadeusDataa[0]?.Persons, LeaveCity: LeaveCity, ArrivalCity: cityCode })
 
         }
@@ -175,7 +175,7 @@ const Results = ({ route, navigation }) => {
 
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                     <Text style={{ color: COLOURS.black, fontWeight: 'bold' }}>
-                        CITIES FOR ADVENTURE
+                        PLEASE SELECT A LOCATION
                     </Text>
                 </View>
 

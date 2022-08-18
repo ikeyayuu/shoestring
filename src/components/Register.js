@@ -201,7 +201,7 @@ const Register = ({ navigation }) => {
                     onPress={() => {navigation.navigate("LandingPage") }
                     }
                 >
-                    <Text style={style.check}>Clock here to check the trips first!</Text>
+                    <Text style={style.check}>Click here to check the trips first!</Text>
                 </TouchableOpacity>
               </View>
             </View>

@@ -54,7 +54,8 @@ const MyBookings = ({ navigation }) => {
                     UserData: UserData,
                 })}
                 activeOpacity={0.7} key={index} style={style.ServiceStyle}>
-                <Text style={style.ttx}>{`Booked By: ${UserData.FirstName} ${UserData.LastName}`} </Text>
+                <Text style={style.ttx}>{`Booked by: ${UserData.FirstName} ${UserData.LastName}`} </Text>
+                <Text>{`Country: ${HotelData.City}`} </Text>
                 <Text>{`Departing Date: ${FlightData.DepartingDate}`} </Text>
                 <Text>{`Returning Date: ${FlightData.ReturningDate}`} </Text>
                 <View style={{ marginTop: 5, flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
@@ -89,7 +90,7 @@ const MyBookings = ({ navigation }) => {
                         </>
                         :
                         <Text style={style.headline}>
-                            Press below button for your adventure bookings
+                            Press the button below to start your new adventures!
                         </Text>
                 }
 
@@ -167,10 +168,12 @@ const style = StyleSheet.create({
         marginTop: height * 0.03,
         flexDirection: 'row',
         justifyContent: 'space-between',
+        alignItems: 'center',
+        alignContent: 'center',
         backgroundColor: COLOURS.white,
     },
     logo: {
-        maxWidth: 350,
+        maxWidth: 400,
         height: '100%',
         paddingTop: 50,
     },

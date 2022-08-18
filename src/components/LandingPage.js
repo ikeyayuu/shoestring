@@ -388,7 +388,7 @@ const LandingPage = ({ navigation, route }) => {
                         renderLeftButton={() =>
                             <Icon style={{ color: COLOURS.orange, position: "absolute", zIndex: 12, margin: 10, marginLeft: width * 0.06 }} name="location-pin" size={28} />
                         }
-                        placeholder="Enter your departing City ?"
+                        placeholder="Enter your departing location"
                         query={{
                             key: 'AIzaSyAGm9Qv2yhO03ggoPIogG3ny3dXsGZFIG0',
                             language: 'en', // language of the results
