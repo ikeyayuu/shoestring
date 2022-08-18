@@ -137,6 +137,7 @@ const Login = ({ navigation }) => {
                 <TextInput
                   style={{ paddingLeft: 10, color: COLOURS.grey }}
                   placeholder="password"
+                  secureTextEntry={true}
                   onChangeText={(text) => {
                     setPassword(text);
                   }}

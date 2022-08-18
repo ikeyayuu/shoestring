@@ -323,7 +323,7 @@ const Details = ({ navigation, route }) => {
                                 })
                                 :
                                 [
-                                    alert("Sorry, Please Register First For booking"),
+                                    alert("Sorry, Please register first to book"),
                                     navigation.replace("Register")
                                 ]
 

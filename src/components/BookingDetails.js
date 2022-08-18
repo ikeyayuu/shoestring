@@ -273,7 +273,8 @@ const BookingDetails = ({ navigation, route }) => {
 
 const style = StyleSheet.create({
     container: {
-        margin: 25,
+        marginHorizontal: 25,
+        marginVertical: 50,
         backgroundColor: "rgba(255,255,255,0.9)",
         flex: 1,
         // alignItems: "center",
@@ -289,7 +290,7 @@ const style = StyleSheet.create({
         width: 140,
         alignSelf: "center",
         height: 45,
-        margin: 10,
+        margin: 40,
     },
 
     inputContainer: {

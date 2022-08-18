@@ -40,7 +40,6 @@ const MyBookings = ({ navigation }) => {
 
     }, [MyBookings])
 
-
     const renderItem = ({ item, index }) => {
         var FlightData = item?.FlightData
         var HotelData = item?.HotelData
@@ -62,7 +61,6 @@ const MyBookings = ({ navigation }) => {
                     <Text>{`Flight: ${FlightData.Flight}`} </Text>
                     <Text style={{ marginRight: 20, color: COLOURS.blue, fontWeight: "800" }}>{`GrandTotal:  ${total.toFixed(2)}`}</Text>
                 </View>
-
             </TouchableOpacity>
         )
     }
@@ -102,34 +100,6 @@ const MyBookings = ({ navigation }) => {
                         style={style.touchableOpacityStyle}>
                         <AntDesign name="plus" color={COLOURS.white} size={24} />
                     </TouchableOpacity>
-                    //  :
-
-                    // <TouchableOpacity style={{
-                    //     position: 'absolute',
-                    //     right: 30,
-                    //     bottom: 30,
-                    //     backgroundColor: COLOURS.blue,
-                    //     width: "40%",
-                    //     borderRadius: 9,
-                    //     padding: 10
-                    // }} onPress={async () => {
-
-                    //     try {
-                    //         await AsyncStorage.removeItem('@AsyncObject').then(async () => {
-                    //             const jsonValue = await AsyncStorage.getItem('@AsyncObject')
-                    //             setMyBookings(jsonValue != null ? JSON.parse(jsonValue) : null)
-                    //             setisLoad(false)
-                    //         }
-
-                    //         )
-
-                    //     } catch (e) {
-                    //         setisLoad(false)
-                    //         // error reading value
-                    //     }
-                    // }}>
-                    //     <Text style={{ fontSize: 17, color: COLOURS.white, }}>Clear Booking</Text>
-                    // </TouchableOpacity>
                 }
             </View>
         </SafeAreaView>

@@ -331,6 +331,7 @@ const LandingPage = ({ navigation, route }) => {
                                     {
                                         text: 'Yes', onPress: async () => {
                                             try {
+                                                await AsyncStorage.clear()
                                                 await AsyncStorage.removeItem('@IsLogin').then(() => {
                                                     navigation.replace('Login')
 
