@@ -55,7 +55,7 @@ const MyBookings = ({ navigation }) => {
                 })}
                 activeOpacity={0.7} key={index} style={style.ServiceStyle}>
                 <Text style={style.ttx}>{`Booked by: ${UserData.FirstName} ${UserData.LastName}`} </Text>
-                <Text>{`Country: ${HotelData.City}`} </Text>
+                <Text>{`City: ${HotelData.City}`} </Text>
                 <Text>{`Departing Date: ${FlightData.DepartingDate}`} </Text>
                 <Text>{`Returning Date: ${FlightData.ReturningDate}`} </Text>
                 <View style={{ marginTop: 5, flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>

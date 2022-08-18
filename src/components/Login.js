@@ -267,6 +267,7 @@ const style = StyleSheet.create({
 
   check: {
     color: COLOURS.orange,
+    
   },
 });
 
