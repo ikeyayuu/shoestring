@@ -192,6 +192,7 @@ const LandingPage = ({ navigation, route }) => {
                                         }
                                     }
                                 )
+                                
                                     .then(async (res) => {
                                         setisResponse(false)
                                         var resDaata = res?.data?.data
