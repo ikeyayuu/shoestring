@@ -22,6 +22,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import WavyBackground from "react-native-wavy-background";
 import COLOURS from "../consts/colours";
 import { CheckBox } from "react-native-web";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // Auth Api
 import { axiosInstance, baseUrl } from "../api";
@@ -59,15 +60,28 @@ const Register = ({ navigation }) => {
 
           axiosInstance
             .post(baseUrl + "users/signup", params)
-            .then((res) => {
+            .then(async (res) => {
               console.warn(res);
               const userData = res.data;
 
-              if (userData.status === "200") {
+              // Directly bring to landing page without log in again
+              if (userData.status === "200") 
+              {
                 setloading(false);
                 Alert.alert("Email verification!","Verify your email to continue");
-                navigation.goBack();
-                // navigation.replace("Results")
+                // navigation.goBack();
+                // // navigation.replace("Results")
+                try {
+                  await AsyncStorage.setItem('@IsLogin', "True").then(() => {
+                  setTimeout(() => {
+                    navigation.replace("MyBookings");
+                    setloading(false);
+                  }, 2000)
+                })
+              } catch (e) {
+                // saving error
+                alert(e)
+              }
               }
             })
             .catch((error) => {
