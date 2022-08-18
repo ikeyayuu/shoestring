@@ -8,6 +8,7 @@ import {
     TextInput,
     ImageBackground,
     TouchableOpacity,
+    Alert,
     Image,
     ActivityIndicator,
     Platform
@@ -44,6 +45,12 @@ const BookingDetails = ({ navigation, route }) => {
 
     }, [])
 
+    const pressHandler = () => {
+        Alert.alert("Bookings", "Are you sure you want to cancel ?", [
+            {text: "Yes", onPress:() =>{navigation.replace("LandingPage") }},
+            {text: "No", onPress:() =>{ }}
+        ])
+    }
 
     async function fetchData(AsyncObject, AsyncArray) {
         console.log("5555555555555555555   ", AsyncObject)
@@ -255,7 +262,7 @@ const BookingDetails = ({ navigation, route }) => {
                                     justifyContent: 'center',
                                     marginTop: 10
                                 }}
-                                onPress={() => {navigation.navigate("LandingPage") }
+                                onPress={() => {pressHandler()}
                                 }
                             >
                                 <Text style={style.check}>Cancel booking</Text>
