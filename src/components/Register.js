@@ -12,6 +12,7 @@ import {
   Dimensions,
   TouchableOpacity,
   Image,
+  Alert,
   ActivityIndicator,
   BackHandler,
   ToastAndroid
@@ -64,7 +65,7 @@ const Register = ({ navigation }) => {
 
               if (userData.status === "200") {
                 setloading(false);
-                alert("User Register !");
+                Alert.alert("Email verification!","Verify your email to continue");
                 navigation.goBack();
                 // navigation.replace("Results")
               }
