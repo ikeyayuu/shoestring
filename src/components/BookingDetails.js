@@ -163,11 +163,7 @@ const BookingDetails = ({ navigation, route }) => {
                         style={style.image}
                     >
                         <View style={style.container}>
-                            <Image
-                                style={style.logo}
-                                source={require("../images/shoestring_logo.png")}
-                            />
-                            <Text style={{ color: COLOURS.green, fontWeight: "bold", fontSize: 17, width: "80%", alignSelf: "center" }}>Contact Details</Text>
+                            <Text style={{ color: COLOURS.green, fontWeight: "bold", fontSize: 17, width: "80%", alignSelf: "center", marginTop: 50 }}>Contact Details</Text>
                             <View style={style.inputContainer}>
                                 <TextInput
                                     style={{ paddingLeft: 10, color: COLOURS.grey, flex: 1 }}
@@ -207,7 +203,7 @@ const BookingDetails = ({ navigation, route }) => {
                                     }}
                                 />
                             </View>
-                            <Text style={{ color: COLOURS.green, fontWeight: "bold", fontSize: 17, width: "80%", alignSelf: "center" }}>Payment Details</Text>
+                            <Text style={{ color: COLOURS.green, fontWeight: "bold", fontSize: 17, width: "80%", alignSelf: "center", marginTop: 30 }}>Payment Details</Text>
                             <View style={[style.inputContainer, { marginTop: 10 }]}>
                                 <TextInput
                                     style={{ paddingLeft: 10, color: COLOURS.grey, flex: 1 }}
@@ -253,6 +249,17 @@ const BookingDetails = ({ navigation, route }) => {
                                     </Text>
                                 </View>
                             </TouchableOpacity>
+                            <TouchableOpacity
+                                style={{
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    marginTop: 10
+                                }}
+                                onPress={() => {navigation.navigate("LandingPage") }
+                                }
+                            >
+                                <Text style={style.check}>Cancel booking</Text>
+                            </TouchableOpacity>
                             {showReturning && (
                                 <DateTimePicker
                                     testID='dateTimePicker'
@@ -277,7 +284,6 @@ const style = StyleSheet.create({
         marginVertical: 50,
         backgroundColor: "rgba(255,255,255,0.9)",
         flex: 1,
-        // alignItems: "center",
     },
 
     image: {
@@ -332,6 +338,9 @@ const style = StyleSheet.create({
     loginHere: {
         color: COLOURS.blue,
     },
+    check: {
+        color: COLOURS.orange,
+      },
 });
 
 export default BookingDetails;
