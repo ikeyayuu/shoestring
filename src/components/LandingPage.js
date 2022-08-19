@@ -73,7 +73,7 @@ const LandingPage = ({ navigation, route }) => {
         let fDate = tempDate.getFullYear() + '-' + ((tempDate.getMonth() + 1) > 9 ? tempDate.getMonth() + 1 : '0' + (tempDate.getMonth() + 1)) + "-" + ((tempDate.getDate()) > 9 ? tempDate.getDate() : '0' + (tempDate.getDate()))
         setDeparting(fDate)
         // setReturning(fDate)
-             setShowDeparting(false);
+        setShowDeparting(false);
     }
     const showModeForDeparting = (currentMode) => {
         setShowDeparting(true);
@@ -124,8 +124,8 @@ const LandingPage = ({ navigation, route }) => {
         else if (departing == returning) {
             alert("Sorry, please make 1 day differnce")
         }
-        else if (bugget < 700) {
-            alert("Sorry, bugget must be greater than 700")
+        else if (bugget < 1) {
+            alert("Sorry, budget can't be 0")
         }
         else if (Persons > 3) {
             alert("Sorry, Max 3 seats allow")
@@ -259,12 +259,10 @@ const LandingPage = ({ navigation, route }) => {
                                             console.log("MyAmadeusDataa===>>>   ", JSON.stringify(MyAmadeusDataa))
 
                                             if (MyAmadeusDataa.length > 0) {
-                                                navigation.replace("Results", { AmadeusDataa: MyAmadeusDataa, access_token: access_token, LeaveCity: CityAirport, isLogged: isLogged })
-
+                                                navigation.replace("Results", { AmadeusDataa: MyAmadeusDataa, access_token: access_token, LeaveCity: CityAirport, isLogged: isLogged, Persons: Persons, departing: departing, })
                                             }
                                             else {
                                                 alert("Sorry we don't have flights at this time.")
-
                                             }
                                             console.log("-----------------")
                                         } else {
@@ -332,7 +330,6 @@ const LandingPage = ({ navigation, route }) => {
                                     {
                                         text: 'Yes', onPress: async () => {
                                             try {
-                                                await AsyncStorage.clear()
                                                 await AsyncStorage.removeItem('@IsLogin').then(() => {
                                                     navigation.replace('Login')
 

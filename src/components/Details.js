@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
     SafeAreaView,
     ScrollView,
@@ -47,8 +47,11 @@ const Details = ({ navigation, route }) => {
     // const isLogged = route?.params?.isLogged ? true : false
     console.log("first--------", isLogged)
     const [isLogged, setisLogged] = useState(false)
+    const [Price1, setPrice1] = useState()
     const getResponse = async () => {
         try {
+            setPrice1(Price)
+
             const jsonValue = await AsyncStorage.getItem('@IsLogin')
             setisLogged(jsonValue != null ? true : false)
 
@@ -57,11 +60,12 @@ const Details = ({ navigation, route }) => {
             alert(e)
         }
     }
+    const { aircraftDaata, hotelData, hotelAddress, Beds, ArrivalCity, LeaveCity, PointofInterest, Price } = route.params
+
     useEffect(() => {
         getResponse();
 
     }, [isLogged])
-    const { aircraftDaata, hotelData, hotelAddress, Beds, ArrivalCity, LeaveCity } = route.params
     var departTime = aircraftDaata.departTime
     var returnTime = aircraftDaata.returnTime
     const [countryName, setcountryName] = useState("")
@@ -172,15 +176,26 @@ const Details = ({ navigation, route }) => {
                                 }}
                             />
 
-                            <Text>{"Price per person:  $" + "170"}</Text>
+                            {Price != null && Price != undefined ?
+                                <Text> {"Price for 1 person:  " + "$" + Price}</Text>
+                                :
+                                // Dummy value in case API can't return any result. Need dummy value to check grand price later on
+                                <Text> {"Price for 1 person:  " + "$170"}</Text>
+
+                            }
                             <Text style={{ fontSize: 20, fontWeight: "900", color: COLOURS.orange, marginTop: 10 }}>{"Grand Price:  $" + hotelGrandPrice}</Text>
-
-
+                            {
+                                PointofInterest != null && PointofInterest != undefined &&
+                                <>
+                                    <Text>{"Point of Interest"}</Text>
+                                    <Text>{PointofInterest[0]?.pointName + "  " + PointofInterest[0]?.Category}</Text>
+                                    <Text>{PointofInterest[1]?.pointName + "  " + PointofInterest[1]?.Category}</Text>
+                                </>
+                            }
                         </View> :
                         status == "Hotel" && index == 0 && hotelData == null &&
                         <Text>No Hotel available</Text>
                 }
-
             </View>
         )
     }

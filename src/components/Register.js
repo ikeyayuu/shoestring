@@ -69,19 +69,18 @@ const Register = ({ navigation }) => {
               {
                 setloading(false);
                 Alert.alert("Email verification!","Verify your email to continue");
-                // navigation.goBack();
-                // // navigation.replace("Results")
-                try {
-                  await AsyncStorage.setItem('@IsLogin', "True").then(() => {
-                  setTimeout(() => {
-                    navigation.replace("MyBookings");
-                    setloading(false);
-                  }, 2000)
-                })
-              } catch (e) {
-                // saving error
-                alert(e)
-              }
+                navigation.goBack();
+                // try {
+                //   await AsyncStorage.setItem('@IsLogin', "True").then(() => {
+                //   setTimeout(() => {
+                //     navigation.replace("MyBookings");
+                //     setloading(false);
+                //   }, 2000)
+                // })
+                // } catch (e) {
+                //   // saving error
+                //   alert(e)
+                // }
               }
             })
             .catch((error) => {
