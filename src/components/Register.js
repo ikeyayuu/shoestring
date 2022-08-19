@@ -69,7 +69,8 @@ const Register = ({ navigation }) => {
               {
                 setloading(false);
                 Alert.alert("Email verification!","Verify your email to continue");
-                navigation.goBack();
+                // navigation.goBack();
+                navigation.navigate("Login")
                 // try {
                 //   await AsyncStorage.setItem('@IsLogin', "True").then(() => {
                 //   setTimeout(() => {
