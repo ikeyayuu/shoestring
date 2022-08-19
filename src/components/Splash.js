@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
-import { Text, View, StyleSheet, Button } from 'react-native'
+import { Text, View, StyleSheet, Button , Image} from 'react-native'
 import { Constants } from 'expo-constants'
 import { useNavigation } from '@react-navigation/native'
 
-export function Splash (props) {
+export function Splash () {
   const navigation = useNavigation()
 
   useEffect( () => {
@@ -12,14 +12,13 @@ export function Splash (props) {
 
   return (
     <View style={styles.container}>
-      <Text>{ props.loadingText }</Text>
+      <Image source ={require("../images/shoestring_logo.png")} />
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Constants.statusBarHeight,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
