@@ -7,7 +7,7 @@ export function Splash (props) {
   const navigation = useNavigation()
 
   useEffect( () => {
-    const timer = setTimeout( () => navigation.navigate('Login'), 3000 )
+    const timer = setTimeout( () => navigation.navigate('LandingPage'), 3000 )
   })
 
   return (
