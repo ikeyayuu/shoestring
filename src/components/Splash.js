@@ -12,7 +12,7 @@ export function Splash () {
 
   return (
     <View style={styles.container}>
-      <Image source ={require("../images/shoestring_logo.png")} />
+      <Image source ={require("../images/splash_screen.jpg")} resizeMode="center" />
     </View>
   )
 }
@@ -22,7 +22,5 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f08f11',
-    minHeight: 150,
   },
 })
