@@ -74,6 +74,7 @@ const Login = ({ navigation }) => {
                 }, 2000)
               })
             } catch (e) {
+              console.log(e)
               // saving error
               alert(e)
             }
@@ -83,7 +84,7 @@ const Login = ({ navigation }) => {
         .catch((error) => {
           // console.warn(error.response.data);
           if (error.message === "Request failed with status code 500") {
-            alert("Wrong Credientials");
+            alert("Something went wrong verify your email or insert right credentials");
           }
           setloading(false);
         });
