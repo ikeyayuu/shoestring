@@ -138,6 +138,7 @@ const Login = ({ navigation }) => {
                   style={{ paddingLeft: 10, color: COLOURS.grey }}
                   placeholder="password"
                   secureTextEntry={true}
+                  autoCapitalize = 'none'
                   onChangeText={(text) => {
                     setPassword(text);
                   }}

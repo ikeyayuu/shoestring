@@ -2,6 +2,7 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { Splash } from './src/components/Splash';
 import LandingPage from './src/components/LandingPage';
 import Results from './src/components/Results';
 import Login from './src/components/Login';
@@ -21,6 +22,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Splash" component={Splash} />
         <Stack.Screen name="LandingPage" component={LandingPage} />
         <Stack.Screen name='BookingDetails' component={BookingDetails} />
         <Stack.Screen name="Results" component={Results} /> 
